@@ -1,13 +1,13 @@
-FROM node:20.10.0
+FROM node:20-alpine
 
-WORKDIR /app
+WORKDIR /react-vite-app
 
-COPY package.json .
+EXPOSE 3000
 
-RUN npm install
+COPY package.json package-lock.json ./
 
-COPY . .
+RUN npm install --silent
 
-EXPOSE 5173
+COPY . ./
 
-CMD [ "npm", "run", "dev" ]
+CMD ["npm", "run", "dev"]

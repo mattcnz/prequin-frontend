@@ -4,9 +4,7 @@
 import React, { useState, useCallback } from 'react';
 import { useParams } from 'react-router-dom';
 import { getInvestors } from '../api';
-
 import { useQuery } from 'react-query';
-
 import CommitmentsTable from '../components/CommitmentsTable';
 import Dropdown from '../components/Dropdown';
 
@@ -16,6 +14,7 @@ import {
 
 
 const getInvestorNameFromDb = (id, data) => {
+    // Find the investor with the given id
     const investor = data.find(item => item.firm_id === id);
     if (!investor) {
         return null;
@@ -23,11 +22,9 @@ const getInvestorNameFromDb = (id, data) => {
     return investor.firm_name;
 }
 
-
 const Investor = () => {
     const { id } = useParams();
     const investorId = parseInt(id);
-
     const [assetClass, setAssetClass] = useState('pe');
 
     const handleSelection = useCallback((e) => {

@@ -1,3 +1,5 @@
+// Desc: Component to display a table that shows data for all investors
+
 import React from 'react';
 import {
     Table,
@@ -15,8 +17,6 @@ import { Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
 
 const InvestorTable = () => {
-
-    // const { data: investors = [], isLoading, error } = useQuery('investors', getInvestors);
 
     const { data: investors = [], isLoading, error } = useQuery(
         ['investors'], 

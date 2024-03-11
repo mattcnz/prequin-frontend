@@ -1,8 +1,20 @@
-# React + Vite
+Built with React + Vite + node 20.10
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+To Run:
 
-Currently, two official plugins are available:
+#### From command line
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+```
+npm install
+npm run dev
+```
+
+#### With docker
+
+```
+docker build -t prequin-frontend .
+docker run -p 3000:3000 prequin-frontend
+```
+
+All pretty basic but things should work if you have the API running locally at the same time...
+
